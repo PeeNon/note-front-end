@@ -1,23 +1,54 @@
-## Project Setup
+# Notes Application
 
-```sh
+A full-stack notes management application built with Vue.js and C# ASP.NET Core.
+
+## 🚀 Live Demo
+
+- **Frontend**: []
+- **Backend**: []
+
+## 📋 Features
+
+- ✅ Create, Read, Update, Delete notes
+- ✅ User authentication & authorization
+- ✅ Search and filtering functionality
+- ✅ Responsive design with TailwindCSS
+- ✅ Real-time updates
+
+## 🛠️ Tech Stack
+
+**Frontend:**
+
+- Vue 3 + TypeScript
+- TailwindCSS
+- Pinia (State Management)
+- Axios (HTTP Client)
+
+**Backend:**
+
+- C# ASP.NET Core Web API
+- Dapper ORM
+- SQL Server
+- JWT Authentication
+
+## 🚀 Quick Start
+
+```bash
+# Frontend
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
+
+# Backend
+dotnet restore
+dotnet run
 ```
 
-### Type-Check, Compile and Minify for Production
+## 📦 Deployment
 
-```sh
+```bash
+# Frontend
 npm run build
-```
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
+# Backend
+dotnet publish -c Release
 ```
