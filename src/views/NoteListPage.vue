@@ -168,11 +168,11 @@
       </DataTable>
     </div>
   </div>
-  <SideDrawer
-    :visible="isDrawerVisible"
+  <NoteModal
+    :visible="isModalVisible"
     :isUpdate="isUpdate"
     :noteId="selectedNoteId !== null ? selectedNoteId.toString() : undefined"
-    @close="closeDrawer"
+    @close="closeModal"
     @showMessage="displayMessage"
   />
   <ConfirmDeleteModal
@@ -194,7 +194,7 @@ import { useRouter } from "vue-router";
 import { useAuthStore } from "../stores/authentication";
 import axios from "../utils/axios";
 import type { DataTableSortEvent } from "primevue/datatable";
-import SideDrawer from "../components/SideDrawer.vue";
+import NoteModal from "../components/NoteModal.vue";
 import ConfirmDeleteModal from "../components/ConfirmDeleteModal.vue";
 import Menu from "primevue/menu";
 import PButton from "primevue/button";
@@ -216,24 +216,24 @@ const totalRecords = ref(0);
 
 const offset = computed(() => page.value * limit.value);
 
-const isDrawerVisible = ref(false);
+const isModalVisible = ref(false);
 const isUpdate = ref(false);
 const selectedNoteId = ref<number | null>(null);
 
 const openUpdateDrawer = (noteId: number) => {
   isUpdate.value = true;
   selectedNoteId.value = noteId;
-  isDrawerVisible.value = true;
+  isModalVisible.value = true;
 };
 
 const openCreateDrawer = () => {
   isUpdate.value = false;
   selectedNoteId.value = null;
-  isDrawerVisible.value = true;
+  isModalVisible.value = true;
 };
 
-const closeDrawer = () => {
-  isDrawerVisible.value = false;
+const closeModal = () => {
+  isModalVisible.value = false;
   fetchNotes();
 };
 
