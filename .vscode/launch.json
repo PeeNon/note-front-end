@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/src",
+      "sourceMaps": true,
+      "timeout": 10000
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Start Dev Server",
+      "program": "${workspaceFolder}/node_modules/.bin/vite",
+      "args": ["--port", "5173", "--host"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Launch App with Dev Server",
+      "configurations": ["Start Dev Server", "Launch Chrome against localhost"],
+      "stopAll": true
+    }
+  ]
+}
